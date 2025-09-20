@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TypeWord — 모노크롬 한글 타자연습</title>
+  <meta name="description" content="한글 속담을 받아와 연습하는 타자연습 — 모노크롬, IME 친화적, 키스트로크 기반 타수" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="TypeWord" class="logo" />
+        <div class="title-block">
+          <h1>TypeWord</h1>
+          <div class="subtitle">한국 속담 타자연습 (모노크롬)</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-grid" id="play-area" tabindex="0">
+    <section class="center-col">
+      <div class="typing-stage">
+        <div class="sentence-viewport" aria-hidden="true">
+          <div class="track" id="track"></div>
+        </div>
+
+        <div class="meta-row">
+          <div class="author-info">
+            <div id="author" class="author">작성자: —</div>
+            <div id="authorProfile" class="author-profile">—</div>
+          </div>
+          <div class="next-preview" id="next-preview">다음: —</div>
+        </div>
+
+        <!-- Visible input bar like typical typing box -->
+        <div class="input-bar-row">
+          <input id="visible-input" class="visible-input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="타자 입력 영역" placeholder="여기에 입력하세요 (한글 IME 지원)"/>
+        </div>
+
+      </div>
+
+    </section>
+
+    <aside class="right-col">
+      <div class="stats-card">
+        <div class="stat"><div class="label">타수 (타/분)</div><div id="cpm" class="value">0</div></div>
+        <div class="stat"><div class="label">시간 (초)</div><div id="time" class="value">0</div></div>
+        <div class="stat"><div class="label">정확도 (%)</div><div id="acc" class="value">100%</div></div>
+      </div>
+
+      <div class="info-card">
+        <h3>문장 출처</h3>
+        <p id="source-info">API: korean-advice-open-api</p>
+      </div>
+
+    </aside>
+
+    <section class="left-col">
+      <div class="history card">
+        <h4>최근 완료</h4>
+        <ul id="recent-list"></ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">TypeWord — Monochrome Korean typing practice</div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
