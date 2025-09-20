@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TypeWord — 한국어 속담 타자연습</title>
+  <meta name="description" content="한국 속담을 받아와 연습하는 타자연습" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="TypeWord" class="logo" />
+        <div class="title-block">
+          <h1>TypeWord</h1>
+          <div class="subtitle">한국 속담 타자연습</div>
+        </div>
+      </div>
+      <nav class="topnav">
+        <div class="time-display" id="time-top">0s</div>
+        <button id="btn-settings" class="icon-btn" title="설정">⚙️</button>
+        <button id="btn-leaderboard" class="icon-btn" title="리더보드">🏆</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-grid" id="play-area" tabindex="0">
+    <section class="center-col">
+      <div class="typing-stage">
+        <div class="sentence-viewport">
+          <div class="track" id="track" aria-live="polite" aria-atomic="true"></div>
+        </div>
+
+        <div class="meta-row">
+          <div class="author-info">
+            <div id="author" class="author">작성자: —</div>
+            <div id="authorProfile" class="author-profile">—</div>
+          </div>
+          <div class="next-preview" id="next-preview">다음: —</div>
+        </div>
+
+        <div class="word-row">
+          <div id="current-word" class="current-word">현재 어절: —</div>
+        </div>
+
+        <textarea id="hidden-input" class="hidden-input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="타자 입력"></textarea>
+
+      </div>
+
+      <div class="controls-row">
+        <button id="btn-new" class="btn primary">새 문제</button>
+        <button id="btn-skip" class="btn">스킵</button>
+        <button id="btn-reset" class="btn">리셋</button>
+      </div>
+
+    </section>
+
+    <aside class="right-col">
+      <div class="stats-card">
+        <div class="stat"><div class="label">타수 (타/분)</div><div id="cpm" class="value">0</div></div>
+        <div class="stat"><div class="label">시간 (초)</div><div id="time" class="value">0</div></div>
+        <div class="stat"><div class="label">정확도 (%)</div><div id="acc" class="value">100%</div></div>
+      </div>
+
+      <div class="info-card">
+        <h3>문장 출처</h3>
+        <p id="source-info">API: korean-advice-open-api</p>
+      </div>
+
+      <div class="settings">
+        <label><input type="checkbox" id="autoNext" checked> 문장 자동 이동</label>
+        <label><input type="checkbox" id="showCaret" checked> 현재 글자 강조</label>
+      </div>
+    </aside>
+
+    <section class="left-col">
+      <div class="history card">
+        <h4>최근 완료</h4>
+        <ul id="recent-list"></ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">TypeWord — Korean proverb typing practice</div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
